@@ -73,17 +73,17 @@ public class Employees {
     }
     public double calculatePenalties(double netPay){
         double payPenalty = 0;
-        if (penalties == Penalties.AGGRESSION){
-            payPenalty = netPay - 45;
+        if (penalties.equals(Penalties.AGGRESSION)){
+            payPenalty = netPay - 8;
         }
-       else if (penalties == Penalties.BULLYING){
-            payPenalty = netPay - 50;
+       else if (penalties.equals(Penalties.BULLYING)){
+            payPenalty = netPay - 20;
         }
-        else if (penalties == Penalties.LAZINESS){
-            payPenalty = netPay - 60;
+        else if (penalties.equals(Penalties.LAZINESS)){
+            payPenalty = netPay - 10;
         }
-       else  if (penalties == Penalties.MISCONDUCT){
-            payPenalty = netPay - 65;
+       else  if (penalties.equals(Penalties.MISCONDUCT)){
+            payPenalty = netPay - 15;
         }
         else{
             payPenalty = netPay - 0;
@@ -93,11 +93,12 @@ public class Employees {
     @Override
     public String toString() {
         return "Employee: \n" +
+                "Employee ID: " + id + "\n"+
                 "Name: " + name + "\n"+
                 "Hourly Wage: $" + hourlyWage + "\n" +
                 "Hours Worked: " + hoursWorked + "hrs\n" +
                 "Bonuses: " + bonuses + "\n" +
-                "Penalties: " + penalties + "\n" +
-                "NetPay: $" + netPay +calculateNetPay();
+                "Penalty: " + penalties + "\n" +
+                "NetPay: $" + calculateNetPay();
     }
 }

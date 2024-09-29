@@ -22,6 +22,7 @@ public class EmployeeImpl implements IEmployee{
 
         employees.add(employee);
         writeToFile("Employee Payroll.txt");
+        System.out.println("Employee added successfully.");
     }
 
     @Override
@@ -31,7 +32,7 @@ public class EmployeeImpl implements IEmployee{
 
     @Override
     public void writeToFile(String filename) {
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Employee Payroll.txt"))) {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             for (Employees employee : employees) {
                 writer.write(employee.toString());
                 writer.newLine();
