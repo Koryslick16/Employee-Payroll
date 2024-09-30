@@ -13,27 +13,30 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
 //        while (true){
 
-        System.out.print("\t=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=");
-        System.out.print("=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=");
-        System.out.print("=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=\n");
+        System.out.print("\t=====================================================");
+        System.out.print("=====================================================");
+        System.out.print("=====================================================\n");
 
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEMPLOYEE PAYROLL MANAGEMENT SYSTEM");
 
-        System.out.print("\t=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=");
-        System.out.print("=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=");
-        System.out.print("=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=" + "=\n");
+        System.out.print("\t=====================================================");
+        System.out.print("=====================================================");
+        System.out.print("=====================================================\n");
 
        EmployeeImpl PayRoll = new EmployeeImpl();
-       int count = 0;
+       int count = 1;
         try {
        do {
            System.out.println("\n" +
-                   "\t1 Add an Employee\n" +
-                   "\t2 View an Employee\n" +
-                   "\t3 Update an Employee's Information \n" +
-                   "\t4 View All Employees\n" +
-                   "\t5 Delete an Employee\n" +
-                   "\t6 Exit Program\n");
+                   "\t\t||============================================||\n" +
+                   "\t\t||\t\t\t\t\tMENU\t\t\t\t\t  ||\n" +
+                   "\t\t||============================================||\n" +
+                   "\t\t1: Add an Employee\n" +
+                   "\t\t2: View an Employee\n" +
+                   "\t\t3: Update an Employee's Information \n" +
+                   "\t\t4: View All Employees\n" +
+                   "\t\t5: Delete an Employee\n" +
+                   "\t\t6: Exit Program\n");
            System.out.println("Input your Preferred action: ");
 
            int inputChoice = input.nextInt();
@@ -41,9 +44,13 @@ public class Main {
            switch (inputChoice) {
                case 1:
                    int id = count++;
+                   if (id == Employees.getId()){
+                       id++;
+                   }
                    System.out.println("Employee Full Name: ");
                    String employeeName = input.nextLine();
-//                    employeeName.replace(" ", "_");
+                   System.out.println("Employee Rank: ");
+                   String rank = input.nextLine();
                    System.out.println("Employee hourly Wage: ");
                    double employeeWage = input.nextDouble();
                    System.out.println("Hours Worked: ");
@@ -60,11 +67,11 @@ public class Main {
                    double bonuses = input.nextDouble();
                    input.nextLine();
                    System.out.println("PENALTIES:" +
-                           "\n1: AGGRESSION" +
-                           "\n2: BULLYING" +
-                           "\n3: LAZINESS" +
-                           "\n4: MISCONDUCT" +
-                           "\n5: NONE");
+                           "\nAGGRESSION" +
+                           "\nBULLYING" +
+                           "\nLAZINESS" +
+                           "\nMISCONDUCT" +
+                           "\nNONE");
                    System.out.println("Employee Penalty: ");
                    Penalties penalties = Penalties.valueOf(input.nextLine().toUpperCase());
                    switch (penalties) {
@@ -91,38 +98,22 @@ public class Main {
                        }
                        default -> throw new IllegalStateException("Unexpected value: " + penalties);
                    }
-                   PayRoll.addEmployee(new Employees(id, employeeName, employeeWage, hrs, bonuses, penalties));
-//                   PayRoll.writeToFile("Employee Payroll.txt");
-//                   PayRoll.processThePayroll();
+                   PayRoll.addEmployee(new Employees(id, employeeName, employeeWage, hrs, bonuses, penalties, rank));
 
                    break;
                case 2:
-                   System.out.println("Input Employee's name: ");
-                   String employee = input.next();
+                   System.out.println("Input Employee's id: ");
+                   int employee = input.nextInt();
                    PayRoll.searchEmployee(employee);
 
                    break;
                case 3:
+                   System.out.println("Input the name of the Employee you want to update");
                    PayRoll.updateEmployee();
 
                    break;
                case 4:
                    PayRoll.displayPayRoll();
-                   try (BufferedReader reader = new BufferedReader(new FileReader("Employee Payroll.txt"))) {
-                       String line;
-                       while ((line = reader.readLine()) != null) {
-                           String[] split = line.split(" ");
-                           String name = split[0].replace("_", " ");
-                           String gender = split[1];
-                           String age = split[2];
-                           String rank = split[3];
-                           System.out.println("Full name: " + name + "\nGender: " + gender + "\nAge: " + age + "\nRank: " + rank);
-                           System.out.println("-------------------------------------------");
-                       }
-
-                   } catch (Exception e) {
-                       e.printStackTrace();
-                   }
 
                    break;
                case 5:
@@ -136,7 +127,7 @@ public class Main {
                    break;
 
                default:
-                   System.out.println("Invalid option. Please input a valid option.4");
+                   System.out.println("Invalid option. Please input a valid option.");
            }
 
 

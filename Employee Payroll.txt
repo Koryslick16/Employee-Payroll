@@ -1,26 +1,36 @@
-Employee: 
-Employee ID: 0
-Name: Korede Anunusor
-Hourly Wage: $15.12
-Hours Worked: 6.0hrs
-Bonuses: 10.0
-Penalties: AGGRESSION
-NetPay: $82.72
 
 Employee: 
 Employee ID: 1
-Name: Inala Jacob
-Hourly Wage: $9.31
-Hours Worked: 7.0hrs
-Bonuses: 2.45
-Penalties: MISCONDUCT
-NetPay: $50.17
+Name: Zion
+Hourly Wage: $600.0
+Hours Worked: 600.0hrs
+Bonuses: $600.0
+Penalty: NONE
+NetPay: $360000.0
 
-Employee:
+Employee: 
 Employee ID: 2
-Name: Igwe Daniel
-Hourly Wage: $13.0
-Hours Worked: 6.0hrs
-Bonuses: 2.5
-Penalties: NONE
-NetPay: $78.0
+Name: Korede Anunusor
+Hourly Wage: $50.0
+Hours Worked: 18.0hrs
+Bonuses: $41.0
+Penalty: AGGRESSION
+NetPay: $892.0
+
+Employee: 
+Employee ID: 3
+Name: Daniel Ikechukwu
+Hourly Wage: $45.3
+Hours Worked: 5.0hrs
+Bonuses: $20.5
+Penalty: LAZINESS
+NetPay: $216.5
+
+Employee: 
+Employee ID: 4
+Name: Brian Bichri
+Hourly Wage: $10.3
+Hours Worked: 8.0hrs
+Bonuses: $27.0
+Penalty: MISCONDUCT
+NetPay: $67.4

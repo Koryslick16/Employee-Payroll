@@ -1,21 +1,23 @@
 package org.example;
 
 public class Employees {
-    private int id;
+    private static int id;
     private String name;
     private double hourlyWage;
     private double hoursWorked;
     private double bonuses;
     private Penalties penalties;
     private double netPay;
+    private String rank;
 
-    public Employees(int id, String name, double hourlyRate, double hoursWorked, double bonuses, Penalties penalties) {
+    public Employees(int id, String name, double hourlyRate, double hoursWorked, double bonuses, Penalties penalties, String rank) {
         this.id = id;
         this.name = name;
         this.hourlyWage = hourlyRate;
         this.hoursWorked = hoursWorked;
         this.bonuses = bonuses;
         this.penalties = penalties;
+        this.rank = rank;
     }
 
     public String getName() {
@@ -26,7 +28,7 @@ public class Employees {
         this.name = name;
     }
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
@@ -62,6 +64,14 @@ public class Employees {
         return penalties;
     }
 
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
+
     public void setPenalties(Penalties penalties) {
         this.penalties = penalties;
     }
@@ -92,12 +102,11 @@ public class Employees {
     }
     @Override
     public String toString() {
-        return "Employee: \n" +
-                "Employee ID: " + id + "\n"+
+        return "Employee ID: " + id + "\n"+
                 "Name: " + name + "\n"+
                 "Hourly Wage: $" + hourlyWage + "\n" +
                 "Hours Worked: " + hoursWorked + "hrs\n" +
-                "Bonuses: " + bonuses + "\n" +
+                "Bonuses: $" + bonuses + "\n" +
                 "Penalty: " + penalties + "\n" +
                 "NetPay: $" + calculateNetPay();
     }

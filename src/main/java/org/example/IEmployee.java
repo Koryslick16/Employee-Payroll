@@ -3,9 +3,8 @@ package org.example;
 public interface IEmployee {
     void displayPayRoll();
     void addEmployee(Employees employees);
-    void processThePayroll();
     void writeToFile(String filename);
-    void searchEmployee(String name);
+    String searchEmployee(int id);
     void updateEmployee();
     void deleteEmployee(int id);
 }
